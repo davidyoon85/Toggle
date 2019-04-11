@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="css/canvas.css" />
+
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" style="border: 1px solid; width: 1420px; height: 590px;" >
+        Oops something wrong wrong..
+    </canvas>
+
+    <script>
+    const canvas = document.getElementById('canvas');
+
+    canvas.width = canvas.scrollWidth;
+    canvas.height = canvas.scrollHeight;
+
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillRect(50, 490, 1320, 100);
+
+    // ctx.fillStyle = 'green'
+    // ctx.fillRect(100, 470, 20, 20);
+
+    const rectangle = {x: 0, y: 0, width: 100, height: 100, color: 'red', speedX: 1};
+
+    // ctx.fillStyle = 'orange'
+    // ctx.arc(1300, 458, 12, 0, 2 * Math.PI);
+    // ctx.closePath();
+    // ctx.fill();
+
+    //put into function aka function update():
+    function update() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        rectangle.x += 1;
+        // rectangle.y += 1;
+
+        ctx.fillStyle = rectangle.color;
+        ctx.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        rectangle.x += rectangle.speedX;
+
+        // ctx.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        window.requestAnimationFrame(update);
+    }
+
+    update();
+
+    </script>
+</body>
+</html>
+
+
+<!-- <script>
+        //reference to html element
+        var canvas = document.getElementById('canvas');
+
+        canvas.width = canvas.scrollWidth;
+        canvas.height = canvas.scrollHeight;
+
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillRect(10, 10, 100, 100);
+
+        //animate => erase previous shape and then redraw new shape, loop
+        // var rectangle = {x: 0, y: 0, width: 100, height: 100};
+        var rectangles = [
+            {x: 0, y: 0, width: 100, height: 100, color: 'red', speedX: 1},
+            {x: 0, y: 100, width: 100, height: 100, color: 'green', speedX: 2},
+            {x: 0, y: 200, width: 100, height: 100, color: 'blue', speedX: 3}
+        ];
+        //put into function aka function update():
+        function update() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // rectangle.x += 1;
+            // rectangle.y += 1;
+
+            rectangles.forEach(function(rectangle){
+                ctx.fillStyle = rectangle.color;
+                ctx.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+                rectangle.x += rectangle.speedX;
+            })
+
+            // ctx.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+            window.requestAnimationFrame(update);
+        }
+
+        update();
+    </script> -->

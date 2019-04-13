@@ -1,24 +1,23 @@
-const state = {
-    pressedKeys: {
-        a: false,
-        w: false,
-        s: false,
-        d: false,
-        m: false,
-        enter: false,
-        spacebar: false
+const controller = {
+    left: false,
+    right: false,
+    up: false,
+    keyListener:function(event) {
+        const key_state = (event.type === "keydown") ? true : false;
+
+        switch(event.keyCode) {
+            case 37:
+                controller.left = key_state;
+            break;
+            case 38:
+                controller.up = key_state;
+            break;
+            case 39:
+                controller.right = key_state;
+            break;
+        }
     }
 }
-
-const keyMap = {
-    13: 'enter',
-    32: 'spacebar',
-    65: 'a',
-    68: 'd',
-    77: 'm',
-    83: 'down',
-    87: 'w'
-};
 
 function keydown(e) {
     const key = keyMap[e.keyCode]
@@ -32,5 +31,5 @@ function keyup(e) {
     console.log(e.keyCode)
 }
 
-window.addEventListener("keydown", keydown, false)
-window.addEventListener("leyup", keyup, false)
+window.addEventListener("keydown", controller.keyListener)
+window.addEventListener("keyup", controller.keyListener)

@@ -7,63 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- ADD CSS LINKS HERE -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/canvas.css" />
+    <link rel="stylesheet" type="text/css" href="css/footer.css" />
+
 
 </head>
 
 <body>
-    <canvas id="canvas" style="border: 1px solid; width: 1000px; height: 500px;" >
+    <div id="canvas_container">
+        <canvas id="canvas" style="width: 1600px; height: 800px;" >
             Oops something wrong..
         </canvas>
-        
-        <!-- <script> 
-            // const canvas = document.getElementById('canvas');
-            
-            // context.fillRect(10, 10, 100, 100);
-            // </script> -->
+    </div>
 
+    <footer className="footer">
+            <div className="footer_social">
+                <a className="social_link" href="https://github.com/davidyoon85">
+                    <i class="fab fa-github-square fa-3x" style="color:black"></i>
+                </a>
+            </div>
+            <div className="footer_social">
+                <a className="social_link" href="https://www.linkedin.com/in/davidyoon85">
+                    <i class="fab fa-linkedin fa-3x" style="color:black"></i>
+                </a>
+            </div>
+    </footer>
 <!-- ADD JS SCRIPTS HERE -->
 <script src="js/game.js"></script>
 <!-- <script src="js/input.js"></script> -->
+<script src="js/stage.js"></script>
+
 </body>
 
 </html>
-
-
-<!-- <script>
-        //reference to html element
-        var canvas = document.getElementById('canvas');
-
-        canvas.width = canvas.scrollWidth;
-        canvas.height = canvas.scrollHeight;
-
-        var ctx = canvas.getContext('2d');
-
-        ctx.fillRect(10, 10, 100, 100);
-
-        //animate => erase previous shape and then redraw new shape, loop
-        // var rectangle = {x: 0, y: 0, width: 100, height: 100};
-        var rectangles = [
-            {x: 0, y: 0, width: 100, height: 100, color: 'red', speedX: 1},
-            {x: 0, y: 100, width: 100, height: 100, color: 'green', speedX: 2},
-            {x: 0, y: 200, width: 100, height: 100, color: 'blue', speedX: 3}
-        ];
-        //put into function aka function update():
-        function update() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            // rectangle.x += 1;
-            // rectangle.y += 1;
-
-            rectangles.forEach(function(rectangle){
-                ctx.fillStyle = rectangle.color;
-                ctx.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-                rectangle.x += rectangle.speedX;
-            })
-
-            // ctx.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-            window.requestAnimationFrame(update);
-        }
-
-        update();
-    </script> -->

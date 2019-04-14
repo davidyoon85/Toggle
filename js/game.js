@@ -12,7 +12,7 @@ function load() {
 };
 
 function reset() {
-    context.fillStyle = "#f5fdfa";
+    context.fillStyle = "white";
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     player.pos = dup(levels[currentLevel].startPos);
     player.x_velocity = 0;
@@ -22,8 +22,11 @@ function reset() {
 };
 
 function render() {
-    context.fillStyle = "#f5fdfa";
+    context.fillStyle = "white";
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+
+    context.font = "30px Arial";
+    context.strokeText(`Stage ${currentLevel + 1}`, 20, 50)
 
     platforms.forEach(platform => {
         player.collisionDetection(platform),

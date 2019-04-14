@@ -14,7 +14,7 @@ class Player {
     };
   
     create() {
-        context.fillStyle = 'mint';
+        context.fillStyle = 'yellow';
         context.fillRect(this.pos.x, this.pos.y, this.width, this.height);
     };
     

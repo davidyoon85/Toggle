@@ -9,13 +9,12 @@ class Object {
     create(object) {
       if (this.type === 'goal') {
         context.strokeStyle = 'black';
+        context.lineWidth = 4;
         context.strokeRect(this.pos.x, this.pos.y, this.width, this.height);
-        context.fillStyle = "#00bfff";
+        context.fillStyle = "yellow";
         context.fillRect(this.pos.x, this.pos.y, this.width, this.height);
       } else {
-        // context.strokeStyle = 'black';
-        // context.strokeRect(this.pos.x, this.pos.y, this.width, this.height);
-        context.fillStyle = "#b3f0de";
+        context.fillStyle = "black";
         context.fillRect(this.pos.x, this.pos.y, this.width, this.height);
           context.shadowOffsetX = 4;
           context.shadowOffsetY = 2;

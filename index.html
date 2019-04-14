@@ -1,45 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
     <title>Toggle</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/canvas.css" />
-    <link rel="stylesheet" type="text/css" href="css/footer.css" />
-</head>
-
-<body>
-    <div id="canvas_container">
-        <canvas id="canvas" height="700" width="1400">
-            Oops something wrong..
-        </canvas>
+    <link rel="stylesheet" href="css/canvas.css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="canvas_container">
+        <canvas id="canvas" height="1000px" width="1400px"></canvas>
+      </div>
     </div>
+    <audio id="bg_music" src="assets/audio/Insert-Quarter.mp3" loop></audio>
 
-    <footer className="footer">
-            <div className="footer_social">
-                <a className="social_link" href="https://github.com/davidyoon85">
-                    <i class="fab fa-github-square fa-3x" style="color:black"></i>
-                </a>
-            </div>
-            <div className="footer_social">
-                <a className="social_link" href="https://www.linkedin.com/in/davidyoon85">
-                    <i class="fab fa-linkedin fa-3x" style="color:black"></i>
-                </a>
-            </div>
-    </footer>
-
-<!-- ADD JS SCRIPTS HERE -->
-<script src="js/controller.js"></script>
-<script src="js/stage.js"></script>
-<script src="js/player.js"></script>
-<script src="js/object.js"></script>
-<script src="js/game.js"></script>
-
-</body>
-
+    <script type="text/javascript" src="js/levels.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/object.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+  </body>
 </html>

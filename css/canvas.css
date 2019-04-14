@@ -1,28 +1,29 @@
-html, body {
-    width: 100%;
+body {
+    background-color: #D5F5EE;
     height: 100vh;
-    margin: 0px;
-    padding: 0px;
-}
-
-footer {
-    display: flex;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    }
+  .main {
     position: absolute;
-    bottom: 30px;
+    top: 50%;
     left: 50%;
-}
-
-#canvas_container {
-    position: relative;
-    top: 5%;
-    margin: 0 auto;
-    height: 800px;
-    width: 1600px;
-    border: 1px solid black;
-}
-
-.canvas {
+    transform: translate(-50%, -50%);
+  }
+  .canvas_container {
+    border: 3px solid white;
+    border-radius: 10px;
     display: block;
-    position:absolute;
+    position: relative;
+    height: 600px;
+    width: 840px;
     margin: auto;
-}
+    transition: 0.3s cubic-bezier(0.6, 0, 0.2, 1);
+    box-shadow: 0px 0px 10px 4px #8f8f8e;
+
+  }
+  #canvas {
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid #222; */
+  }

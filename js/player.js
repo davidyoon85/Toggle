@@ -99,6 +99,7 @@ class Player {
             if (this.pos.y < 0) { 
                 this.pos.y = 0; 
             } else if ((this.pos.y + this.height) > levels[currentLevel].height) {
+                numDeaths++;
                 reset();
             }
         };

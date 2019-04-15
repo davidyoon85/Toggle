@@ -4,6 +4,7 @@ const music = document.getElementById('bg_music');
 const player = new Player();
 let musicOn = false;
 let currentLevel = 0;
+let numDeaths = 0;
 let platforms = [];
 let gameOver = document.getElementById('game_over');
 
@@ -42,6 +43,10 @@ function render() {
     context.font = "30px 'Press Start 2P'";
     context.fillStyle = "#000000";
     context.fillText(`Stage ${currentLevel + 1}`, 40, 70)
+
+    context.font = "20px 'Press Start 2P'";
+    context.fillStyle = "#000000";
+    context.fillText(`Deaths: ${numDeaths}`, 40, 120)
 
     platforms.forEach(platform => {
         player.collisionDetection(platform),

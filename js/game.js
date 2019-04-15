@@ -1,12 +1,15 @@
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 const music = document.getElementById('bg_music');
-const player = new Player();
+const player = new Player(context);
 let musicOn = false;
 let currentLevel = 0;
 let numDeaths = 0;
 let platforms = [];
 let gameOver = document.getElementById('game_over');
+
+const img = new Image();
+img.src = 'assets/images/sprites/sprite_v2.png';
 
 document.addEventListener('DOMContentLoaded', ()=> {
     document.addEventListener('keydown', () => {
@@ -14,6 +17,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         startMenu.classList.add('hidden');
     });
 })
+
 
 function load() {
     reset();
@@ -36,7 +40,6 @@ function reset() {
 };
 
 function render() {
-    
     context.fillStyle = "#FFFFFF";
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     
@@ -52,7 +55,7 @@ function render() {
         player.collisionDetection(platform),
         platform.create()
     });
-    
+
     checkInput();
     player.create();
     player.move();

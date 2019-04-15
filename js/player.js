@@ -1,7 +1,11 @@
 class Player {
     constructor() {
-        this.height = 32;
-        this.width = 32;
+        //player display
+        this.height = 42;
+        this.width = 42;
+
+
+        //player movement
         this.pos = { x: 0, y: 0 };
         this.x_velocity = 0;
         this.y_velocity = 0;
@@ -12,15 +16,17 @@ class Player {
         this.onGround = false;
         this.gravity = 0.75;
     };
-  
+
     create() {
-        context.fillStyle = 'yellow';
-        context.fillRect(this.pos.x, this.pos.y, this.width, this.height);
+        debugger
+        // context.fillStyle = 'yellow';
+        // context.fillRect(this.pos.x, this.pos.y, this.width, this.height);
+        context.drawImage(img, 0, 0, 14, 74, this.pos.x, this.pos.y, 42, 222);
     };
     
     move() {
         this.y_velocity += this.gravity;
-        
+
         if (this.x_velocity > this.x_velocityMax) {
             this.x_velocity = this.x_velocityMax
         } else if (this.x_velocity < -(this.x_velocityMax)) { 
@@ -104,3 +110,5 @@ class Player {
             }
         };
     };
+
+

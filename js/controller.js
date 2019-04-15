@@ -1,7 +1,10 @@
 const input = {
   up: false,
+  upActive: false,
   left: false,
+  leftActive: false,
   right: false,
+  rightActive: false,
   restart: false
 };
   
@@ -14,13 +17,16 @@ document.addEventListener('keydown', e => {
   const key = e.keyCode;
     switch(key) {
       case 32: 
-        input.up = true; 
+        input.up = true;
+        upActive = true; 
       break;    
       case 65: 
         input.left = true; 
+        leftActive = true; 
       break;  
       case 68: 
         input.right = true; 
+        rightActive = true; 
       break;
       case 77: 
         input.music = true; 
@@ -35,13 +41,16 @@ document.addEventListener('keyup', e => {
   const key = e.keyCode;
     switch(key) {
       case 32: 
-        input.up = false; 
+        input.up = false;
+        upActive = false; 
       break;   
       case 65: 
         input.left = false; 
+        leftActive = false; 
       break;  
       case 68: 
-        input.right = false; 
+        input.right = false;
+        rightActive = false; 
       break;   
       case 77: 
         input.music = false; 

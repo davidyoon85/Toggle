@@ -24,7 +24,7 @@ function reset() {
         music.pause();
         gameOver.className = "game_over";
     } else {
-        context.fillStyle = "white";
+        context.fillStyle = "#FFFFFF";
         context.fillRect(0, 0, context.canvas.width, context.canvas.height);
         player.pos = dup(levels[currentLevel].startPos);
         player.x_velocity = 0;
@@ -36,11 +36,11 @@ function reset() {
 
 function render() {
     
-    context.fillStyle = "white";
+    context.fillStyle = "#FFFFFF";
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     
     context.font = "30px 'Press Start 2P'";
-    context.fillStyle = "black";
+    context.fillStyle = "#000000";
     context.fillText(`Stage ${currentLevel + 1}`, 40, 70)
 
     platforms.forEach(platform => {
@@ -48,7 +48,7 @@ function render() {
         platform.create()
     });
     
-    collectInput();
+    checkInput();
     player.create();
     player.move();
     player.checkBoundary();

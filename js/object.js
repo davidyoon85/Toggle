@@ -8,13 +8,13 @@ class Object {
   
     create(object) {
       if (this.type === 'goal') {
-        context.strokeStyle = 'black';
+        context.strokeStyle = '#000000';
         context.lineWidth = 4;
         context.strokeRect(this.pos.x, this.pos.y, this.width, this.height);
-        context.fillStyle = "yellow";
+        context.fillStyle = "#ffff00";
         context.fillRect(this.pos.x, this.pos.y, this.width, this.height);
       } else {
-        context.fillStyle = "black";
+        context.fillStyle = "#000000";
         context.fillRect(this.pos.x, this.pos.y, this.width, this.height);
           context.shadowOffsetX = 4;
           context.shadowOffsetY = 2;

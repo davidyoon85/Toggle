@@ -1,7 +1,8 @@
 const input = {
   up: false,
   left: false,
-  right: false
+  right: false,
+  restart: false
 };
   
 document.addEventListener('keydown', e => {
@@ -24,6 +25,9 @@ document.addEventListener('keydown', e => {
       case 77: 
         input.music = true; 
       break;     
+      case 82: 
+        input.restart = true; 
+      break;
   }
 });
 
@@ -42,38 +46,41 @@ document.addEventListener('keyup', e => {
       case 77: 
         input.music = false; 
       break; 
+      case 82: 
+        input.restart = false; 
+      break;
   }
 });
 
-function collectInput() {
+function checkInput() {
   if (input.music) {
     input.music = false;
     music.paused ? music.play() : music.pause();
   }
 
-  if (player.onGround && input.up) {
-    player.onGround = false;
-    player.y_velocity = -(player.y_velocityMax);
-    input.up = false;
+  if (input.restart) {
+    reset();
   }
 
-  if (!player.onGround && input.up) {
-    const filteredObjects = levels[currentLevel].platforms.filter(obj => {
+  if (player.onGround && input.up) {
+    player.onGround = false;
+    input.up = false;
+    player.y_velocity = -(player.y_velocityMax);
+  } else if (!player.onGround && input.up) {
+    const platforms = levels[currentLevel].platforms.filter(obj => {
       return (
-        !(player.pos.y >= obj.pos.y + obj.height || player.pos.y + player.height <= obj.pos.y)
+        !(player.pos.y >= (obj.pos.y + obj.height) || (player.pos.y + player.height) <= obj.pos.y)
       );
     });
 
-    if (filteredObjects.some(obj => obj.pos.x + obj.width === player.pos.x)) {
-      player.y_velocity = player.y_velocityMax * -1;
-      player.x_velocity = player.x_velocityMax * 1;
-    } else if (filteredObjects.some(obj => obj.pos.x === player.pos.x + player.width)) {
-      player.y_velocity = player.y_velocityMax * -1;
-      player.x_velocity = player.x_velocityMax * -1;
-    } else if (player.doubleJumps) {
-      player.y_velocity = -(player.y_velocityMax) * player.doubleJumpMod;
-      player.doubleJumps--;
-    }
+    if (platforms.some(obj => obj.pos.x + obj.width === player.pos.x)) {
+      player.x_velocity = player.x_velocityMax;
+      player.y_velocity = -(player.y_velocityMax);
+    } else if (platforms.some(obj => obj.pos.x === player.pos.x + player.width)) {
+      player.y_velocity = -(player.y_velocityMax);
+      player.x_velocity = -(player.x_velocityMax);
+    } 
+    
     input.up = false;
   }
 }

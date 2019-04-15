@@ -5,28 +5,43 @@ const player = new Player();
 let musicOn = false;
 let currentLevel = 0;
 let platforms = [];
+let gameOver = document.getElementById('game_over');
+
+document.addEventListener('DOMContentLoaded', ()=> {
+    document.addEventListener('keydown', () => {
+        const startMenu = document.getElementById('start_menu');
+        startMenu.classList.add('hidden');
+    });
+})
 
 function load() {
-  reset();
-  render();
+    reset();
+    render();
 };
 
 function reset() {
-    context.fillStyle = "white";
-    context.fillRect(0, 0, context.canvas.width, context.canvas.height);
-    player.pos = dup(levels[currentLevel].startPos);
-    player.x_velocity = 0;
-    player.y_velocity = 0;
-
-    platforms = levels[currentLevel].platforms.map(platform => new Object(platform));
+    if (currentLevel === levels.length) {
+        music.pause();
+        gameOver.className = "game_over";
+    } else {
+        context.fillStyle = "white";
+        context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+        player.pos = dup(levels[currentLevel].startPos);
+        player.x_velocity = 0;
+        player.y_velocity = 0;
+        
+        platforms = levels[currentLevel].platforms.map(platform => new Object(platform));
+    }
 };
 
 function render() {
+    
     context.fillStyle = "white";
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
-
-    context.font = "30px Arial";
-    context.strokeText(`Stage ${currentLevel + 1}`, 20, 50)
+    
+    context.font = "30px 'Press Start 2P'";
+    context.fillStyle = "black";
+    context.fillText(`Stage ${currentLevel + 1}`, 40, 70)
 
     platforms.forEach(platform => {
         player.collisionDetection(platform),

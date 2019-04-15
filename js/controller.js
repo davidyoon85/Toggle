@@ -1,7 +1,7 @@
 const input = {
   up: false,
   left: false,
-  right: false,
+  right: false
 };
   
 document.addEventListener('keydown', e => {
@@ -20,7 +20,10 @@ document.addEventListener('keydown', e => {
       break;  
       case 68: 
         input.right = true; 
-      break;    
+      break;
+      case 77: 
+        input.music = true; 
+      break;     
   }
 });
 
@@ -35,11 +38,19 @@ document.addEventListener('keyup', e => {
       break;  
       case 68: 
         input.right = false; 
-      break;    
+      break;   
+      case 77: 
+        input.music = false; 
+      break; 
   }
 });
 
 function collectInput() {
+  if (input.music) {
+    input.music = false;
+    music.paused ? music.play() : music.pause();
+  }
+
   if (player.onGround && input.up) {
     player.onGround = false;
     player.y_velocity = -(player.y_velocityMax);

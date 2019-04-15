@@ -66,8 +66,8 @@ class Player {
             break;
           case 'goal':
                 obj.stageNum ? (currentLevel = obj.stageNum) : currentLevel++;
-            reset();
-            break;
+                reset();
+                break;
         }
       }
     };

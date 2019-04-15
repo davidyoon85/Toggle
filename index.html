@@ -5,19 +5,33 @@
     <title>Toggle</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" href="css/canvas.css">
   </head>
   <body>
 
     <div class="main">
       <div class="canvas_container">
+        <div id="start_menu">
+          <h1>TOGGLE</h1></br>
+          <h2>Press A or D to move!</h2><br/>
+          <h2>Press Space to jump!</h2>
+        </div>
+
         <canvas id="canvas" height="1000px" width="1400px"></canvas>
+
+        <div id="game_over" class="hidden">
+          <div className="game_over_body">
+            <h1>CONGRATULATIONS!</h1></br>
+            <h1>YOU WIN!</h1></br>
+            <h2>Press R to play again</h2><br/>
+          </div>
+        </div>
       </div>
       
       <div className="social_links">
-        <a href="https://github.com/davidyoon85"><i class="fab fa-4x fa-github-square"></i></a>
-        <a href="https://www.linkedin.com/in/davidyoon85"><i class="fab fa-4x fa5 fa-linkedin"></i></a>
+        <a href="https://github.com/davidyoon85"><i class="fab fa-6x fa-github-square"></i></a>
+        <a href="https://www.linkedin.com/in/davidyoon85"><i class="fab fa-6x fa5 fa-linkedin"></i></a>
       </div>
     </div>
 

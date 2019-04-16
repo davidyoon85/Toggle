@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
     });
 })
 
-
 function load() {
     reset();
     render();
@@ -26,10 +25,10 @@ function load() {
 
 function reset() {
     if (currentLevel === levels.length) {
-        music.pause();
+        music.pause(); 
         gameOver.className = "game_won";
     } else {
-        context.fillStyle = "#FFFFFF";
+        context.fillStyle = "black";
         context.fillRect(0, 0, context.canvas.width, context.canvas.height);
         player.pos = dup(levels[currentLevel].startPos);
         player.x_velocity = 0;
@@ -40,16 +39,24 @@ function reset() {
 };
 
 function render() {
-    context.fillStyle = "#FFFFFF";
+    context.fillStyle = "black";
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     
-    context.font = "30px 'Press Start 2P'";
-    context.fillStyle = "#000000";
-    context.fillText(`Stage ${currentLevel + 1}`, 40, 70)
+    context.font = "15px 'Press Start 2P'";
+    context.fillStyle = "white";
+    context.fillText(`Stage`, 20, 40)
 
-    context.font = "20px 'Press Start 2P'";
-    context.fillStyle = "#000000";
-    context.fillText(`Deaths: ${numDeaths}`, 40, 120)
+    context.font = "15px 'Press Start 2P'";
+    context.fillStyle = "yellow";
+    context.fillText(`${currentLevel + 1}`, 50, 60)
+
+    context.font = "15px 'Press Start 2P'";
+    context.fillStyle = "white";
+    context.fillText(`Deaths`, 120, 40)
+
+    context.font = "15px 'Press Start 2P'";
+    context.fillStyle = "yellow";
+    context.fillText(`${numDeaths}`, 150, 60)
 
     platforms.forEach(platform => {
         player.collisionDetection(platform),
@@ -60,6 +67,8 @@ function render() {
     player.create();
     player.move();
     player.checkBoundary();
+
+    // platforms[platforms.length-1].goalUpdate();
 
     requestAnimationFrame(render);
 };

@@ -16,15 +16,15 @@ class Player {
 
     create() {
         const scale = 3;
-        const spriteWidth = 20;
-        const spriteHeight = 74;
+        const spriteWidth = 14;
+        const spriteHeight = 14;
         const scaledWidth = scale * spriteWidth;
         const scaledHeight = scale * spriteHeight;
 
         if (input.rightActive) {
-            context.drawImage(img, spriteWidth * 2, 0, spriteWidth, spriteHeight, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
+            context.drawImage(img, 40, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
         }  else {
-            context.drawImage(img, 0, 0, spriteWidth, spriteHeight, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
+            context.drawImage(img, 0, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
         }
     };
 

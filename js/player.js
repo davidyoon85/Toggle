@@ -4,7 +4,6 @@ class Player {
         this.height = 42;
         this.width = 42;
 
-
         //player movement
         this.pos = { x: 0, y: 0 };
         this.x_velocity = 0;
@@ -18,12 +17,31 @@ class Player {
     };
 
     create() {
-        debugger
-        // context.fillStyle = 'yellow';
-        // context.fillRect(this.pos.x, this.pos.y, this.width, this.height);
-        context.drawImage(img, 0, 0, 14, 74, this.pos.x, this.pos.y, 42, 222);
+        const scale = 3;
+        const spriteWidth = 20;
+        const spriteHeight = 74;
+        const scaledWidth = scale * spriteWidth;
+        const scaledHeight = scale * spriteHeight;
+
+        // if (rightActive) {
+            context.drawImage(img, spriteWidth * 2, 0, spriteWidth, spriteHeight, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
+        // }
+        // context.drawImage(img, spriteWidth * 3, 0, spriteWidth, spriteHeight, this.pos.x, 0, scaledWidth, scaledHeight);        
     };
-    
+
+    // drawFrame(frameX, frameY, canvasX, canvasY) {
+    //     context.drawImage(img,
+    //         frameX * width, frameY * height, width, height,
+    //         canvasX, canvasY, scaledWidth, scaledHeight);
+    // }
+      
+    // init() {
+    //     drawFrame(0, 0, 0, 0);
+    //     drawFrame(1, 0, scaledWidth, 0);
+    //     drawFrame(0, 0, scaledWidth * 2, 0);
+    //     drawFrame(2, 0, scaledWidth * 3, 0);
+    // }
+
     move() {
         this.y_velocity += this.gravity;
 

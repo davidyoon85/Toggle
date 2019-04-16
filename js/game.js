@@ -7,6 +7,7 @@ let currentLevel = 0;
 let numDeaths = 0;
 let platforms = [];
 let gameOver = document.getElementById('game_over');
+let gameWon = document.getElementById('game_won');
 
 const img = new Image();
 img.src = 'assets/images/sprites/sprite_v2.png';
@@ -26,7 +27,7 @@ function load() {
 function reset() {
     if (currentLevel === levels.length) {
         music.pause(); 
-        gameOver.className = "game_won";
+        gameWon.className = "game_won";
     } else {
         context.fillStyle = "black";
         context.fillRect(0, 0, context.canvas.width, context.canvas.height);
@@ -42,21 +43,21 @@ function render() {
     context.fillStyle = "black";
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     
-    context.font = "15px 'Press Start 2P'";
+    context.font = "18px 'Press Start 2P'";
     context.fillStyle = "white";
     context.fillText(`Stage`, 20, 40)
 
-    context.font = "15px 'Press Start 2P'";
+    context.font = "18px 'Press Start 2P'";
     context.fillStyle = "yellow";
-    context.fillText(`${currentLevel + 1}`, 50, 60)
+    context.fillText(`${currentLevel + 1}`, 55, 70)
 
-    context.font = "15px 'Press Start 2P'";
+    context.font = "18px 'Press Start 2P'";
     context.fillStyle = "white";
-    context.fillText(`Deaths`, 120, 40)
+    context.fillText(`Deaths`, 140, 40)
 
-    context.font = "15px 'Press Start 2P'";
+    context.font = "18px 'Press Start 2P'";
     context.fillStyle = "yellow";
-    context.fillText(`${numDeaths}`, 150, 60)
+    context.fillText(`${numDeaths}`, 180, 70)
 
     platforms.forEach(platform => {
         player.collisionDetection(platform),

@@ -39,24 +39,3 @@ class Object {
     //     }
     //   }
   }
-
-  // create(object) {
-  //   if (this.type === 'goal') {
-  //     // context.strokeStyle = 'blue';
-  //     // context.lineWidth = 4;
-  //     // context.strokeRect(this.pos.x, this.pos.y, this.width, this.height);
-  //     context.fillStyle = "white";
-  //     context.fillRect(this.pos.x, this.pos.y, this.width, this.height);
-  //   } else {
-  //     context.strokeStyle = 'blue';
-  //     context.lineWidth = 4;
-  //     context.strokeRect(this.pos.x, this.pos.y, this.width, this.height);
-  //     // context.fillStyle = "blue";
-  //     // context.fillRect(this.pos.x, this.pos.y, this.width, this.height);
-  //       context.shadowOffsetX = 10;
-  //       context.shadowOffsetY = 2;
-  //       context.shadowBlur = 10;
-  //       context.shadowColor = "rgba(0, 0, 0, 0.5)";
-  //   }
-  // }
-  

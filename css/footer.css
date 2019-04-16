@@ -1,3 +1,13 @@
 i:hover {
+    color: gray;
     transform: scale(1.1);
+  }
+
+i {
+    color: black;
+    margin: 50px;
+}
+
+.social_links {
+    width: 15%;
 }

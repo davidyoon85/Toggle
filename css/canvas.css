@@ -48,16 +48,6 @@ body {
     width: 100%;
   }
 
-  i {
-    color: black;
-    margin: 50px;
-  }
-
-  i:hover {
-    color: gray;
-    transform: scale(1.1);
-  }
-
   #start_menu {
     position: absolute;
     top: 25%;
@@ -68,7 +58,7 @@ body {
     margin: 0 auto;
     background-color: black;
     color: white;
-    font-size: 20px;
+    font-size: 14px;
   }
 
   .game_won {

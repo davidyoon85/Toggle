@@ -17,15 +17,14 @@ document.addEventListener('keydown', e => {
     switch(key) {
       case 32: 
         input.up = true;
-        upActive = true; 
       break;    
       case 65: 
         input.left = true; 
-        rightActive = false; 
+        input.rightActive = false; 
       break;  
       case 68: 
         input.right = true; 
-        rightActive = true; 
+        input.rightActive = true; 
       break;
       case 77: 
         input.music = true; 

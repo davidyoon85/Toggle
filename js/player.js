@@ -23,10 +23,11 @@ class Player {
         const scaledWidth = scale * spriteWidth;
         const scaledHeight = scale * spriteHeight;
 
-        // if (rightActive) {
+        if (input.rightActive) {
             context.drawImage(img, spriteWidth * 2, 0, spriteWidth, spriteHeight, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
-        // }
-        // context.drawImage(img, spriteWidth * 3, 0, spriteWidth, spriteHeight, this.pos.x, 0, scaledWidth, scaledHeight);        
+        }  else {
+            context.drawImage(img, 0, 0, spriteWidth, spriteHeight, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
+        }
     };
 
     // drawFrame(frameX, frameY, canvasX, canvasY) {

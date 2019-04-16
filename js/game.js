@@ -27,7 +27,7 @@ function load() {
 function reset() {
     if (currentLevel === levels.length) {
         music.pause();
-        gameOver.className = "game_over";
+        gameOver.className = "game_won";
     } else {
         context.fillStyle = "#FFFFFF";
         context.fillRect(0, 0, context.canvas.width, context.canvas.height);

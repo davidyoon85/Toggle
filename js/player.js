@@ -1,10 +1,8 @@
 class Player {
     constructor() {
-        //player display
         this.height = 42;
         this.width = 42;
 
-        //player movement
         this.pos = { x: 0, y: 0 };
         this.x_velocity = 0;
         this.y_velocity = 0;
@@ -30,19 +28,6 @@ class Player {
         }
     };
 
-    // drawFrame(frameX, frameY, canvasX, canvasY) {
-    //     context.drawImage(img,
-    //         frameX * width, frameY * height, width, height,
-    //         canvasX, canvasY, scaledWidth, scaledHeight);
-    // }
-      
-    // init() {
-    //     drawFrame(0, 0, 0, 0);
-    //     drawFrame(1, 0, scaledWidth, 0);
-    //     drawFrame(0, 0, scaledWidth * 2, 0);
-    //     drawFrame(2, 0, scaledWidth * 3, 0);
-    // }
-
     move() {
         this.y_velocity += this.gravity;
 
@@ -64,7 +49,7 @@ class Player {
             if (this.x_velocity < this.x_acceleration && this.x_velocity > -(this.x_acceleration)) { 
                 this.x_velocity = 0 
             } else if (this.x_velocity < 0) { 
-                this.x_velocity += this.x_acceleration/1.85 
+                this.x_velocity += this.x_acceleration/1.8
             } else if (this.x_velocity > 0) { 
                 this.x_velocity -= this.x_acceleration/1.85 
             };
@@ -89,6 +74,14 @@ class Player {
         };
         
         collision(obj) {
+            if ((this.pos.x + this.width < obj.pos.x + this.x_velocity + 1)) {
+                this.x_velocity = 0;
+                this.pos.x = obj.pos.x - this.width;
+            } else if ((this.pos.x > obj.pos.x + obj.width - this.x_velocity - 1)) {
+                this.x_velocity = 0;
+                this.pos.x = obj.pos.x + obj.width;
+            }
+
             if ((this.pos.y + this.height) < (obj.pos.y + this.y_velocity + 1)) {
                 this.y_velocity = 0;
                 this.pos.y = obj.pos.y - this.height;
@@ -96,14 +89,6 @@ class Player {
             } else if ((this.pos.y > obj.pos.y) + (obj.height - this.y_velocity - 1)) {
                 this.y_velocity = 0;
                 this.pos.y = obj.pos.y + obj.height;
-            }
-            
-            if ((this.pos.x + this.width < obj.pos.x + this.x_velocity+ 1)) {
-                this.x_velocity = 0;
-                this.pos.x = obj.pos.x - this.width;
-            } else if ((this.pos.x > obj.pos.x + obj.width - this.x_velocity - 1)) {
-                this.x_velocity = 0;
-                this.pos.x = obj.pos.x + obj.width;
             }
         };
 
@@ -125,9 +110,12 @@ class Player {
                 this.pos.y = 0; 
             } else if ((this.pos.y + this.height) > levels[currentLevel].height) {
                 numDeaths++;
-                reset();
+                if (numDeaths > 4) {
+                    music.pause();
+                    gameOver.className = "game_over";
+                } else {
+                    reset();
+                }
             }
         };
     };
-
-

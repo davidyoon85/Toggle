@@ -70,6 +70,25 @@ body {
     font-size: 15px;
   }
 
+  .game_won {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+
+  .game_won_body {
+    top: 25%;
+    left: 25;
+  }
+
   .game_over {
     position: absolute;
     top: 0;

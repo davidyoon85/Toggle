@@ -111,8 +111,8 @@ class Player {
             }
             
             if ((this.pos.y + this.height) > levels[currentLevel].height) {
-                numDeaths++;
-                if (numDeaths > 4) {
+                numLives--;
+                if (numLives === 0) {
                     music.pause();
                     gameOver.className = "game_over";
                 } else {

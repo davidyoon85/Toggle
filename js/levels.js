@@ -18,6 +18,69 @@ const levels = [
         type: 'platform'
       },
       {
+        pos: { x: 200, y: 750 },
+        height: 50,
+        width: 50,
+        id: 1,
+        type: 'collectible'
+      },
+      {
+        pos: { x: 300, y: 750 },
+        height: 50,
+        width: 50,
+        id: 2,
+        type: 'collectible'
+      },
+      {
+        pos: { x: 400, y: 750 },
+        height: 50,
+        width: 50,
+        id: 3,
+        type: 'collectible'
+      },
+      {
+        pos: { x: 500, y: 750 },
+        height: 50,
+        width: 50,
+        id: 4,
+        type: 'collectible'
+      },
+      {
+        pos: { x: 850, y: 750 },
+        height: 50,
+        width: 50,
+        id: 5,
+        type: 'collectible'
+      },
+      {
+        pos: { x: 950, y: 750 },
+        height: 50,
+        width: 50,
+        id: 6,
+        type: 'collectible'  
+      },
+      {
+        pos: { x: 1050, y: 750 },
+        height: 50,
+        width: 50,
+        id: 7,
+        type: 'collectible'
+      },
+      {
+        pos: { x: 1150, y: 750 },
+        height: 50,
+        width: 50,
+        id: 8,
+        type: 'collectible'
+      },
+      // {
+      //   pos: { x: 1250, y: 750 },
+      //   height: 50,
+      //   width: 50,
+      //   id: 4,
+      //   type: 'collectible'
+      // },
+      {
         pos: { x: 1300, y: 700 },
         height: 80, 
         width: 50,

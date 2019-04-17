@@ -1,7 +1,7 @@
 class Player {
     constructor() {
-        this.height = 42;
-        this.width = 42;
+        this.height = 49;
+        this.width = 49;
 
         this.pos = { x: 0, y: 0 };
         this.x_velocity = 0;
@@ -12,19 +12,20 @@ class Player {
         this.y_acceleration = 0.6;
         this.onGround = false;
         this.gravity = 0.75;
+        this.collectedPellets = [];
     };
 
     create() {
-        const scale = 3;
+        const scale = 3.5;
         const spriteWidth = 14;
         const spriteHeight = 14;
         const scaledWidth = scale * spriteWidth;
         const scaledHeight = scale * spriteHeight;
 
         if (input.rightActive) {
-            context.drawImage(img, 40, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
+            context.drawImage(spriteImg, 40, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
         }  else {
-            context.drawImage(img, 0, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
+            context.drawImage(spriteImg, 0, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
         }
     };
 
@@ -64,6 +65,12 @@ class Player {
                 switch(obj.type) {
                     case 'platform':
                         this.collision(obj);
+                    break;
+                    case 'collectible':
+                        this.collectedPellets.push(obj.id)
+                        obj.width = 0;
+                        obj.height = 0;
+                        score += 10;
                     break;
                     case 'goal':
                         currentLevel++;

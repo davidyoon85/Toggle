@@ -12,12 +12,6 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 800, y: 800 },
-        height: 30, 
-        width: 600,
-        type: 'platform'
-      },
-      {
         pos: { x: 200, y: 750 },
         height: 15,
         width: 15,
@@ -46,28 +40,34 @@ const levels = [
         type: 'collectible'
       },
       {
-        pos: { x: 850, y: 750 },
+        pos: { x: 800, y: 800 },
+        height: 30, 
+        width: 600,
+        type: 'platform'
+      },
+      {
+        pos: { x: 900, y: 750 },
         height: 15,
         width: 15,
         id: 5,
         type: 'collectible'
       },
       {
-        pos: { x: 950, y: 750 },
+        pos: { x: 1000, y: 750 },
         height: 15,
         width: 15,
         id: 6,
         type: 'collectible'  
       },
       {
-        pos: { x: 1050, y: 750 },
+        pos: { x: 1100, y: 750 },
         height: 15,
         width: 15,
         id: 7,
         type: 'collectible'
       },
       {
-        pos: { x: 1150, y: 750 },
+        pos: { x: 1200, y: 750 },
         height: 15,
         width: 15,
         id: 8,
@@ -114,21 +114,21 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 550, y: 650 },
+        pos: { x: 600, y: 650 },
         height: 15,
         width: 15,
         id: 3,
         type: 'collectible'
       },
       {
-        pos: { x: 650, y: 650 },
+        pos: { x: 700, y: 650 },
         height: 15,
         width: 15,
         id: 4,
         type: 'collectible'
       },
       {
-        pos: { x: 750, y: 650 },
+        pos: { x: 800, y: 650 },
         height: 15,
         width: 15,
         id: 5,
@@ -141,14 +141,14 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 1050, y: 550 },
+        pos: { x: 1100, y: 550 },
         height: 15,
         width: 15,
         id: 6,
         type: 'collectible'
       },
       {
-        pos: { x: 1150, y: 550 },
+        pos: { x: 1200, y: 550 },
         height: 15,
         width: 15,
         id: 7,
@@ -195,21 +195,21 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 750, y: 600 },
+        pos: { x: 800, y: 600 },
         height: 15,
         width: 15,
         id: 3,
         type: 'collectible'
       },
       {
-        pos: { x: 850, y: 600 },
+        pos: { x: 900, y: 600 },
         height: 15,
         width: 15,
         id: 4,
         type: 'collectible'
       },
       {
-        pos: { x: 950, y: 600 },
+        pos: { x: 1000, y: 600 },
         height: 15,
         width: 15,
         id: 5,
@@ -222,21 +222,21 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 200, y: 450 },
+        pos: { x: 250, y: 450 },
         height: 15,
         width: 15,
         id: 6,
         type: 'collectible'
       },
       {
-        pos: { x: 300, y: 450 },
+        pos: { x: 350, y: 450 },
         height: 15,
         width: 15,
         id: 7,
         type: 'collectible'
       },
       {
-        pos: { x: 400, y: 450 },
+        pos: { x: 450, y: 450 },
         height: 15,
         width: 15,
         id: 8,
@@ -249,21 +249,21 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 750, y: 300 },
+        pos: { x: 800, y: 300 },
         height: 15,
         width: 15,
         id: 9,
         type: 'collectible'
       },
       {
-        pos: { x: 850, y: 300 },
+        pos: { x: 900, y: 300 },
         height: 15,
         width: 15,
         id: 10,
         type: 'collectible'
       },
       {
-        pos: { x: 950, y: 300 },
+        pos: { x: 1000, y: 300 },
         height: 15,
         width: 15,
         id: 11,
@@ -346,21 +346,21 @@ const levels = [
       },
 
       {
-        pos: { x: 1050, y: 150 },
+        pos: { x: 1100, y: 150 },
         height: 15,
         width: 15,
         id: 8,
         type: 'collectible'
       },
       {
-        pos: { x: 1150, y: 150 },
+        pos: { x: 1200, y: 150 },
         height: 15,
         width: 15,
         id: 9,
         type: 'collectible'
       },
       {
-        pos: { x: 1250, y: 150 },
+        pos: { x: 1300, y: 150 },
         height: 15,
         width: 15,
         id: 10,
@@ -373,84 +373,84 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 150, y: 500 },
+        pos: { x: 200, y: 500 },
         height: 15,
         width: 15,
         id: 11,
         type: 'collectible'
       },
       {
-        pos: { x: 250, y: 500 },
+        pos: { x: 300, y: 500 },
         height: 15,
         width: 15,
         id: 12,
         type: 'collectible'
       },
       {
-        pos: { x: 350, y: 500 },
+        pos: { x: 400, y: 500 },
         height: 15,
         width: 15,
         id: 13,
         type: 'collectible'
       },
       {
-        pos: { x: 450, y: 500 },
+        pos: { x: 500, y: 500 },
         height: 15,
         width: 15,
         id: 14,
         type: 'collectible'
       },
       {
-        pos: { x: 550, y: 500 },
+        pos: { x: 600, y: 500 },
         height: 15,
         width: 15,
         id: 15,
         type: 'collectible'
       },
       {
-        pos: { x: 650, y: 500 },
+        pos: { x: 700, y: 500 },
         height: 15,
         width: 15,
         id: 16,
         type: 'collectible'
       },
       {
-        pos: { x: 750, y: 500 },
+        pos: { x: 800, y: 500 },
         height: 15,
         width: 15,
         id: 17,
         type: 'collectible'
       },
       {
-        pos: { x: 850, y: 500 },
+        pos: { x: 900, y: 500 },
         height: 15,
         width: 15,
         id: 18,
         type: 'collectible'
       },
       {
-        pos: { x: 950, y: 500 },
+        pos: { x: 1000, y: 500 },
         height: 15,
         width: 15,
         id: 19,
         type: 'collectible'
       },
       {
-        pos: { x: 1050, y: 500 },
+        pos: { x: 1100, y: 500 },
         height: 15,
         width: 15,
         id: 20,
         type: 'collectible'
       },
       {
-        pos: { x: 1150, y: 500 },
+        pos: { x: 1200, y: 500 },
         height: 15,
         width: 15,
         id: 21,
         type: 'collectible'
       },
       {
-        pos: { x: 1250, y: 500 },
+        pos: { x: 1300, y: 500 },
         height: 15,
         width: 15,
         id: 22,
@@ -463,7 +463,7 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 50, y: 850 },
+        pos: { x: 75, y: 850 },
         height: 15,
         width: 15,
         id: 23,
@@ -476,7 +476,7 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 300, y: 850 },
+        pos: { x: 325, y: 850 },
         height: 15,
         width: 15,
         id: 24,
@@ -489,7 +489,7 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 550, y: 850 },
+        pos: { x: 575, y: 850 },
         height: 15,
         width: 15,
         id: 25,
@@ -502,7 +502,7 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 800, y: 850 },
+        pos: { x: 825, y: 850 },
         height: 15,
         width: 15,
         id: 26,
@@ -515,7 +515,7 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 1050, y: 850 },
+        pos: { x: 1075, y: 850 },
         height: 15,
         width: 15,
         id: 27,

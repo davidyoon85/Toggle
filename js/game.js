@@ -67,7 +67,7 @@ function render() {
     context.fillText(`Lives`, 140, 40)
 
     context.font = "18px 'Press Start 2P'";
-    context.fillStyle = "yellsaow";
+    context.fillStyle = "yellow";
     if (numLives < 0) {
         numLives = 0;
     };

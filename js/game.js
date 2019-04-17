@@ -5,6 +5,7 @@ const player = new Player(context);
 let musicOn = false;
 let currentLevel = 0;
 let numLives = 5;
+let pause = false;
 var score = 0;
 let platforms = [];
 let gameOver = document.getElementById('game_over');
@@ -66,7 +67,7 @@ function render() {
     context.fillText(`Lives`, 140, 40)
 
     context.font = "18px 'Press Start 2P'";
-    context.fillStyle = "yellow";
+    context.fillStyle = "yellsaow";
     if (numLives < 0) {
         numLives = 0;
     };
@@ -85,10 +86,12 @@ function render() {
         platform.create()
     });
 
-    checkInput();
-    player.create(input.heroColor);
-    player.move();
-    player.checkBoundary();
+    if (!pause) {
+        checkInput();
+        player.create(input.heroColor);
+        player.move();
+        player.checkBoundary();
+    }
 
     // platforms[platforms.length-1].goalUpdate();
 

@@ -12,12 +12,12 @@ class Object {
   
     create(object) {
       if (this.type === 'goal') {
-        context.fillStyle = "white";
+        context.fillStyle = "#FFFF00";
         context.fillRect(this.pos.x, this.pos.y, this.width, this.height);
       } else if (this.type === 'collectible') {
         context.drawImage(coinImg, this.pos.x, this.pos.y, this.width, this.height);
       } else {
-        context.strokeStyle = 'blue';
+        context.strokeStyle = '#1919A6';
         context.lineWidth = 4;
         context.strokeRect(this.pos.x, this.pos.y, this.width, this.height);
 

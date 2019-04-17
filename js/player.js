@@ -8,10 +8,10 @@ class Player {
         this.y_velocity = 0;
         this.x_velocityMax = 10;
         this.y_velocityMax = 18;
-        this.x_acceleration = 0.6;
-        this.y_acceleration = 0.6;
+        this.x_acceleration = 0.5;
+        this.y_acceleration = 0.5;
         this.onGround = false;
-        this.gravity = 0.75;
+        this.gravity = 0.78;
         this.collectedPellets = [];
     };
 
@@ -48,6 +48,7 @@ class Player {
 
     move() {
         this.y_velocity += this.gravity;
+        this.x_velocity += (input.left ? (-(this.x_acceleration)) : this.x_acceleration) + (input.right ? this.x_acceleration : -(this.x_acceleration)) 
 
         if (this.x_velocity > this.x_velocityMax) {
             this.x_velocity = this.x_velocityMax
@@ -60,16 +61,14 @@ class Player {
         } else if (this.y_velocity < -(this.y_velocityMax)) {
             this.y_velocity = -(this.y_velocityMax);
         }
-
-        this.x_velocity += 
-            (input.left ? (-(this.x_acceleration)) : this.x_acceleration) + (input.right ? this.x_acceleration : -(this.x_acceleration)) 
+  
         if ((!input.right && !input.left) || (input.right && input.left)) {
             if (this.x_velocity < this.x_acceleration && this.x_velocity > -(this.x_acceleration)) { 
                 this.x_velocity = 0 
             } else if (this.x_velocity < 0) { 
                 this.x_velocity += this.x_acceleration/1.8
             } else if (this.x_velocity > 0) { 
-                this.x_velocity -= this.x_acceleration/1.85 
+                this.x_velocity -= this.x_acceleration/1.8
             };
         };
     };
@@ -126,10 +125,11 @@ class Player {
             if (this.pos.x < 0) { 
                 this.x_velocity = 0; 
                 this.pos.x = 0; 
+                debugger
             } else if ((this.pos.x + this.width) > levels[currentLevel].width) { 
                 this.x_velocity = 0; 
                 this.pos.x = levels[currentLevel].width - this.width; 
-                this.y_velocity = 0; 
+                debugger
             } else if ((this.pos.y < 0) || (this.pos.y > (levels[currentLevel].height - this.height))) { 
             }
         
@@ -141,6 +141,7 @@ class Player {
                 if (numLives === 1) {
                     numLives--;
                     bg_music.pause();
+                    pause = true;
                     gameOver.className = "game_over";
                 } else {
                     numLives--;

@@ -528,13 +528,6 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 1300, y: 850 },
-        height: 50,
-        width: 50,
-        id: 28,
-        type: 'collectible'
-      },
-      {
         pos: { x: 1300, y: 800 },
         height: 80, 
         width: 50,

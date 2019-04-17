@@ -20,11 +20,15 @@ time, mark, audio, video, button {
 }
 
 body {
-    background-color: #e5e5e5;
-    height: 100vh;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 30px;
-    }
+  background-image: url("/Users/david/Desktop/Toggle/assets/images/bg_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #e5e5e5;
+  height: 100vh;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  font-size: 50px;
+  }
 
   .main {
     height: 70%;
@@ -36,12 +40,19 @@ body {
     align-items: center;
     transform: translate(-50%, -50%);
   }
+  
+   {
+    color: white;
+    font-size: 30px;
+    background-color: orange;
+  }
+
   .canvas_container {
     border-radius: 10px;
     height: 100%;
     width: 100vh;
     margin: 0 auto;
-    box-shadow: 0px 0px 10px 4px #8f8f8e;
+    box-shadow: 0px 0px 20px 5px #526eec;
   }
   
   #canvas {

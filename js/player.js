@@ -76,6 +76,7 @@ class Player {
                     break;
                     case 'goal':
                         currentLevel++;
+                        this.collectedPellets = [];
                         reset();
                     break;
                 }
@@ -120,11 +121,13 @@ class Player {
             }
             
             if ((this.pos.y + this.height) > levels[currentLevel].height) {
-                numLives--;
-                if (numLives === 0) {
+                if (numLives === 1) {
+                    numLives--;
+                    // numLives = 0;
                     bg_music.pause();
                     gameOver.className = "game_over";
                 } else {
+                    numLives--;
                     reset();
                 }
             }

@@ -28,7 +28,6 @@ class Object {
       }
     }
 
-
     // goalUpdate() {
     //   this.tick++;
     //   if (this.tick % 100 === 0) {

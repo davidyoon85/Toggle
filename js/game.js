@@ -41,7 +41,6 @@ function reset() {
 
         platforms = levels[currentLevel].platforms.filter(platform => !player.collectedPellets.includes(platform.id))
         platforms = platforms.map((platform) => new Object(platform));
-        // platforms = levels[currentLevel].platforms.map((platform) => new Object(platform));
     }
 };
 
@@ -63,6 +62,9 @@ function render() {
 
     context.font = "18px 'Press Start 2P'";
     context.fillStyle = "yellow";
+    if (numLives < 0) {
+        numLives = 0;
+    };
     context.fillText(`${numLives}`, 180, 70)
 
     context.font = "18px 'Press Start 2P'";

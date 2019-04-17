@@ -30,7 +30,7 @@ function load() {
 
 function reset() {
     if (currentLevel === levels.length) {
-        music.pause(); 
+        bg_music.pause(); 
         gameWon.className = "game_won";
     } else {
         context.fillStyle = "black";

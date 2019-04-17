@@ -67,10 +67,12 @@ class Player {
                         this.collision(obj);
                     break;
                     case 'collectible':
-                        this.collectedPellets.push(obj.id)
-                        obj.width = 0;
-                        obj.height = 0;
-                        score += 10;
+                        if (!this.collectedPellets.includes(obj.id)) {
+                            this.collectedPellets.push(obj.id)
+                            obj.width = 0;
+                            obj.height = 0;
+                            score += 10;
+                        }
                     break;
                     case 'goal':
                         currentLevel++;
@@ -120,7 +122,7 @@ class Player {
             if ((this.pos.y + this.height) > levels[currentLevel].height) {
                 numLives--;
                 if (numLives === 0) {
-                    music.pause();
+                    bg_music.pause();
                     gameOver.className = "game_over";
                 } else {
                     reset();

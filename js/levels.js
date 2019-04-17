@@ -73,13 +73,6 @@ const levels = [
         id: 8,
         type: 'collectible'
       },
-      // {
-      //   pos: { x: 1250, y: 750 },
-      //   height: 50,
-      //   width: 50,
-      //   id: 4,
-      //   type: 'collectible'
-      // },
       {
         pos: { x: 1300, y: 700 },
         height: 80, 

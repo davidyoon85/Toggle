@@ -15,7 +15,8 @@ class Player {
         this.collectedPellets = [];
     };
 
-    create() {
+    create(heroColor) {
+        let hero_color = heroColor % 4
         const scale = 3.5;
         const spriteWidth = 14;
         const spriteHeight = 14;
@@ -23,9 +24,25 @@ class Player {
         const scaledHeight = scale * spriteHeight;
 
         if (input.rightActive) {
-            context.drawImage(spriteImg, 40, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
+            if (hero_color === 0) {
+                context.drawImage(yellowSprite, 40, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);                  
+            } else if (hero_color === 1) {
+                context.drawImage(blueSprite, 40, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);                  
+            } else if (hero_color === 2) {
+                context.drawImage(redSprite, 40, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);                  
+            } else {
+                context.drawImage(pinkSprite, 40, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);                  
+            }
         }  else {
-            context.drawImage(spriteImg, 0, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);    
+            if (hero_color === 0) {
+                context.drawImage(yellowSprite, 0, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);                      
+            } else if (hero_color === 1) {
+                context.drawImage(blueSprite, 0, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);                      
+            } else if (hero_color === 2) {
+                context.drawImage(redSprite, 0, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);                      
+            } else {
+                context.drawImage(pinkSprite, 0, 0, 14, 14, this.pos.x, this.pos.y, scaledWidth, scaledHeight);                                      
+            }  
         }
     };
 
@@ -123,7 +140,6 @@ class Player {
             if ((this.pos.y + this.height) > levels[currentLevel].height) {
                 if (numLives === 1) {
                     numLives--;
-                    // numLives = 0;
                     bg_music.pause();
                     gameOver.className = "game_over";
                 } else {

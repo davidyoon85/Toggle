@@ -10,11 +10,16 @@ let platforms = [];
 let gameOver = document.getElementById('game_over');
 let gameWon = document.getElementById('game_won');
 
-const spriteImg = new Image();
-spriteImg.src = 'assets/images/sprites/sprite_v2.png';
-
+const yellowSprite = new Image();
+    yellowSprite.src = 'assets/images/sprites/yellow_hero.png';
+const blueSprite = new Image();
+    blueSprite.src = 'assets/images/sprites/blue_hero.png';
+const redSprite = new Image();
+    redSprite.src = 'assets/images/sprites/red_hero.png';
+const pinkSprite = new Image();
+    pinkSprite.src = 'assets/images/sprites/pink_hero.png';
 const coinImg = new Image();
-coinImg.src = 'assets/images/pellet.png';
+    coinImg.src = 'assets/images/pellet.png';
 
 document.addEventListener('DOMContentLoaded', ()=> {
     document.addEventListener('keydown', () => {
@@ -81,7 +86,7 @@ function render() {
     });
 
     checkInput();
-    player.create();
+    player.create(input.heroColor);
     player.move();
     player.checkBoundary();
 

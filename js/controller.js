@@ -1,10 +1,10 @@
 const input = {
   up: false,
-  upActive: false,
   left: false,
   right: false,
   rightActive: true,
-  restart: false
+  restart: false,
+  heroColor: 0
 };
   
 document.addEventListener('keydown', e => {
@@ -15,7 +15,14 @@ document.addEventListener('keydown', e => {
   }
   const key = e.keyCode;
     switch(key) {
+      case 13: 
+        input.heroColor ++;
+        console.log(input.heroColor)
+      break;   
       case 32: 
+        input.up = true;
+      break; 
+      case 87: 
         input.up = true;
       break;    
       case 65: 
@@ -39,6 +46,9 @@ document.addEventListener('keyup', e => {
   const key = e.keyCode;
     switch(key) {
       case 32: 
+        input.up = false;
+      break;  
+      case 87: 
         input.up = false;
       break;   
       case 65: 

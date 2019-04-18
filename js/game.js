@@ -5,8 +5,10 @@ const player = new Player(context);
 let musicOn = false;
 let currentLevel = 0;
 let numLives = 5;
-let pause = false;
+let pause = true;
 var score = 0;
+let tick = 0;
+let time = 0;
 let platforms = [];
 let gameOver = document.getElementById('game_over');
 let gameWon = document.getElementById('game_won');
@@ -81,12 +83,21 @@ function render() {
     context.fillStyle = "yellow";
     context.fillText(`${score}`, 290, 70)
 
+    context.font = "18px 'Press Start 2P'";
+    context.fillStyle = "white";
+    context.fillText(`Time`, 380, 40)
+
+    context.font = "18px 'Press Start 2P'";
+    context.fillStyle = "yellow";
+    context.fillText(`${time}`, 410, 70)
+
     platforms.forEach(platform => {
         player.collisionDetection(platform),
         platform.create()
     });
 
     if (!pause) {
+        ticker();
         checkInput();
         player.create(input.heroColor);
         player.move();
@@ -100,6 +111,13 @@ function render() {
 
 function dup(obj) {
     return JSON.parse(JSON.stringify(obj));
+}
+
+function ticker() {
+    tick++;
+    if (tick % 20 === 0) {
+        time++;
+    }
 }
 
 load();

@@ -125,14 +125,11 @@ class Player {
             if (this.pos.x < 0) { 
                 this.x_velocity = 0; 
                 this.pos.x = 0; 
-                debugger
             } else if ((this.pos.x + this.width) > levels[currentLevel].width) { 
                 this.x_velocity = 0; 
                 this.pos.x = levels[currentLevel].width - this.width; 
-                debugger
-            } else if ((this.pos.y < 0) || (this.pos.y > (levels[currentLevel].height - this.height))) { 
             }
-        
+            
             if (this.pos.y < 0) { 
                 this.pos.y = 0; 
             }

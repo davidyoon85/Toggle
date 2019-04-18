@@ -11,13 +11,13 @@ document.addEventListener('keydown', e => {
   e.preventDefault();
   if (!musicOn) {
     musicOn = true;
+    pause = false;
     music.play();
   }
   const key = e.keyCode;
     switch(key) {
       case 13: 
         input.heroColor ++;
-        console.log(input.heroColor)
       break;   
       case 32: 
         input.up = true;

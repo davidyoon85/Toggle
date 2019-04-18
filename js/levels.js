@@ -73,12 +73,19 @@ const levels = [
         id: 8,
         type: 'collectible'
       },
+      // this.pos.x, this.pos.y, this.radius
       {
-        pos: { x: 1300, y: 700 },
-        height: 80, 
-        width: 50,
-        type: 'goal',
-      },
+        pos: { x: 1300, y: 730},
+        height: 40,
+        width: 40,
+        type: 'goal'
+      }
+      // {
+      //   pos: { x: 1300, y: 700 },
+      //   height: 80, 
+      //   width: 50,
+      //   type: 'goal',
+      // },
     ],
   },
   {
@@ -155,11 +162,11 @@ const levels = [
         type: 'collectible'
       },
       {
-        pos: { x: 1300, y: 500 },
-        height: 80, 
-        width: 50,
-        type: 'goal',
-      },
+        pos: { x: 1300, y: 530},
+        height: 40,
+        width: 40,
+        type: 'goal'
+      }
     ],
   },
   {
@@ -270,10 +277,10 @@ const levels = [
         type: 'collectible'
       },
       {
-        pos: { x: 400, y: 150 },
-        height: 80, 
-        width: 50,
-        type: 'goal',
+        pos: { x: 400, y: 180},
+        height: 40,
+        width: 40,
+        type: 'goal'
       },
     ],
   },
@@ -528,10 +535,10 @@ const levels = [
         type: 'platform'
       },
       {
-        pos: { x: 1300, y: 800 },
-        height: 80, 
-        width: 50,
-        type: 'goal',
+        pos: { x: 1300, y: 830},
+        height: 40,
+        width: 40,
+        type: 'goal'
       },
     ],
   }

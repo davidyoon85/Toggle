@@ -104,8 +104,6 @@ function render() {
         player.checkBoundary();
     }
 
-    // platforms[platforms.length-1].goalUpdate();
-
     requestAnimationFrame(render);
 };
 

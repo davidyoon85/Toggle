@@ -73,19 +73,12 @@ const levels = [
         id: 8,
         type: 'collectible'
       },
-      // this.pos.x, this.pos.y, this.radius
       {
         pos: { x: 1300, y: 730},
         height: 40,
         width: 40,
         type: 'goal'
       }
-      // {
-      //   pos: { x: 1300, y: 700 },
-      //   height: 80, 
-      //   width: 50,
-      //   type: 'goal',
-      // },
     ],
   },
   {

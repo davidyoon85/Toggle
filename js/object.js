@@ -26,13 +26,13 @@ class Object {
         context.drawImage(coinImg, this.pos.x, this.pos.y, this.width, this.height);
       } else {
         context.strokeStyle = '#1919A6';
-        context.lineWidth = 4;
+        context.lineWidth = 8;
         context.strokeRect(this.pos.x, this.pos.y, this.width, this.height);
 
-        context.shadowOffsetX = 10;
-        context.shadowOffsetY = 2;
-        context.shadowBlur = 10;
-        context.shadowColor = "rgba(0, 0, 0, 0.5)";
+        // context.shadowOffsetX = 4;
+        // context.shadowOffsetY = 4;
+        // context.shadowBlur = 15;
+        // context.shadowColor = "#1919A6";
       }
     }
 

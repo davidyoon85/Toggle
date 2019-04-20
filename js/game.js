@@ -5,7 +5,6 @@ const player = new Player(context);
 let musicOn = false;
 let currentLevel = 0;
 let numLives = 5;
-// let gameStart = false;
 let pause = true;
 var score = 0;
 let tick = 0;
@@ -53,14 +52,12 @@ function reset() {
 };
 
 function gameWin() {
-    debugger
     bg_music.pause(); 
     player.gameStart = false;
     gameWon.className = "game_won";
 }
 
 function gameLose() {
-    debugger
     bg_music.pause(); 
     player.gameStart = false;
     gameOver.className = "game_over";
@@ -71,10 +68,6 @@ function restart() {
     numLives = 5;
     player.x_velocity = 0;
     player.y_velocity = 0;
-    // player.x_velocityMax = 10;
-    // player.y_velocityMax = 18;
-    // player.x_acceleration = 0.5;
-    // player.y_acceleration = 0.5;
     score = 0;
     time = 0;
     gameOver.className = "hidden";

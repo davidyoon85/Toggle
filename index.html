@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/canvas.css">
     <link rel="stylesheet" href="css/footer.css">
 
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
+
   </head>
   <body background="assets/images/bg_1.jpg">
 
@@ -51,21 +54,26 @@
 
     <audio id="bg_music" src="assets/audio/Insert-Quarter.mp3" loop></audio>
 
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAMJeBcjfy67HxU9yGqDCqbasylr8jKcBU",
+        authDomain: "toggle-6ae6f.firebaseapp.com",
+        databaseURL: "https://toggle-6ae6f.firebaseio.com",
+        projectId: "toggle-6ae6f",
+        storageBucket: "toggle-6ae6f.appspot.com",
+        messagingSenderId: "942632684793"
+      };
+
+      firebase.initializeApp(config);
+    </script>
+
     <script type="text/javascript" src="js/levels.js"></script>
     <script type="text/javascript" src="js/player.js"></script>
     <script type="text/javascript" src="js/object.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
 
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
-    <script>
-      // TODO: Replace the following with your app's Firebase project configuration
-      var firebaseConfig = {
-        // ...
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script> -->
   </body>
 </html>

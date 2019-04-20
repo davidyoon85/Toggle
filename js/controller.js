@@ -37,7 +37,6 @@ document.addEventListener('keydown', e => {
         input.music = true; 
       break;     
       case 82: 
-      debugger
         input.restart = true; 
         checkInput();
       break;
@@ -72,7 +71,6 @@ function checkInput() {
   }
 
   if (input.restart) {
-    debugger
     input.restart = false;
     restart();
   }

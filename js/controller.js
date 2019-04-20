@@ -37,7 +37,9 @@ document.addEventListener('keydown', e => {
         input.music = true; 
       break;     
       case 82: 
+      debugger
         input.restart = true; 
+        checkInput();
       break;
   }
 });
@@ -60,9 +62,6 @@ document.addEventListener('keyup', e => {
       case 77: 
         input.music = false; 
       break; 
-      case 82: 
-        input.restart = false; 
-      break;
   }
 });
 
@@ -73,7 +72,9 @@ function checkInput() {
   }
 
   if (input.restart) {
-    reset();
+    debugger
+    input.restart = false;
+    restart();
   }
 
   if (player.onGround && input.up) {

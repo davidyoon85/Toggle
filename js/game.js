@@ -5,6 +5,7 @@ const player = new Player(context);
 let musicOn = false;
 let currentLevel = 0;
 let numLives = 5;
+// let gameStart = false;
 let pause = true;
 var score = 0;
 let tick = 0;
@@ -32,25 +33,55 @@ document.addEventListener('DOMContentLoaded', ()=> {
 })
 
 function load() {
+    player.gameStart = true;
+    checkInput();
     reset();
     render();
 };
 
 function reset() {
     if (currentLevel === levels.length) {
-        bg_music.pause(); 
-        gameWon.className = "game_won";
-    } else {
+        gameWin();
+    } else if (player.gameStart) {
         context.fillStyle = "black";
         context.fillRect(0, 0, context.canvas.width, context.canvas.height);
         player.pos = dup(levels[currentLevel].startPos);
-        player.x_velocity = 0;
-        player.y_velocity = 0;
 
         platforms = levels[currentLevel].platforms.filter(platform => !player.collectedPellets.includes(platform.id))
         platforms = platforms.map((platform) => new Object(platform));
     }
 };
+
+function gameWin() {
+    debugger
+    bg_music.pause(); 
+    player.gameStart = false;
+    gameWon.className = "game_won";
+}
+
+function gameLose() {
+    debugger
+    bg_music.pause(); 
+    player.gameStart = false;
+    gameOver.className = "game_over";
+}
+
+function restart() {
+    currentLevel = 0;
+    numLives = 5;
+    player.x_velocity = 0;
+    player.y_velocity = 0;
+    // player.x_velocityMax = 10;
+    // player.y_velocityMax = 18;
+    // player.x_acceleration = 0.5;
+    // player.y_acceleration = 0.5;
+    score = 0;
+    time = 0;
+    gameOver.className = "hidden";
+    gameWon.className = "hidden";
+    player.gameStart = true;
+    load();
+}
 
 function render() {
     context.fillStyle = "black";
@@ -96,15 +127,14 @@ function render() {
         platform.create()
     });
 
-    if (!pause) {
-        ticker();
         checkInput();
+    if (player.gameStart) {
+        ticker();
         player.create(input.heroColor);
         player.move();
         player.checkBoundary();
+        requestAnimationFrame(render);
     }
-
-    requestAnimationFrame(render);
 };
 
 function dup(obj) {

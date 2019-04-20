@@ -12,6 +12,7 @@ class Player {
         this.onGround = false;
         this.gravity = 0.78;
         this.collectedPellets = [];
+        this.gameStart = false;
     };
 
     create(heroColor) {
@@ -121,28 +122,28 @@ class Player {
             this.pos.x += this.x_velocity;
             this.pos.y += this.y_velocity;
         
-            if (this.pos.x < 0) { 
-                this.x_velocity = 0; 
-                this.pos.x = 0; 
-            } else if ((this.pos.x + this.width) > levels[currentLevel].width) { 
-                this.x_velocity = 0; 
-                this.pos.x = levels[currentLevel].width - this.width; 
-            }
-            
-            if (this.pos.y < 0) { 
-                this.pos.y = 0; 
-            }
-            
-            if ((this.pos.y + this.height) > levels[currentLevel].height) {
-                if (numLives === 1) {
-                    numLives--;
-                    bg_music.pause();
-                    pause = true;
-                    gameOver.className = "game_over";
-                } else {
-                    numLives--;
-                    reset();
+            if (this.gameStart) {
+                if (this.pos.x < 0) { 
+                    this.x_velocity = 0; 
+                    this.pos.x = 0; 
+                } else if ((this.pos.x + this.width) > levels[currentLevel].width) { 
+                    this.x_velocity = 0; 
+                    this.pos.x = levels[currentLevel].width - this.width; 
                 }
+                
+                if (this.pos.y < 0) { 
+                    this.pos.y = 0; 
+                }
+                if ((this.pos.y + this.height) > levels[currentLevel].height) {
+                    if (numLives === 1) {
+                        numLives--;
+                        gameLose();
+                    } else {
+                        numLives--;
+                        reset();
+                    }
+            }
+            
             }
         };
     };

@@ -19,7 +19,7 @@ let scoreList = $("#score-list")
 
 
 
-$("#high-score").submit(highScoreSubmit);
+$("#high-score-input").submit(highScoreSubmit);
 
 const yellowSprite = new Image();
     yellowSprite.src = 'assets/images/sprites/yellow_hero.png';
@@ -157,6 +157,7 @@ function ticker() {
 function highScoreSubmit() {
     let name = $("#inputname").val();
 
+    debugger
     database.ref().push({
     name: name,
     score: score

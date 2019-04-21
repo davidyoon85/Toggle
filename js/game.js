@@ -2,6 +2,7 @@ const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 const music = document.getElementById('bg_music');
 const player = new Player(context);
+
 let musicOn = false;
 let currentLevel = 0;
 let numLives = 5;
@@ -12,6 +13,13 @@ let time = 0;
 let platforms = [];
 let gameOver = document.getElementById('game_over');
 let gameWon = document.getElementById('game_won');
+let highScoreInput = document.getElementById('high-score-input');
+let nameScore = $('#name');
+let scoreList = $("#score-list")
+
+
+
+$("#high-score").submit(highScoreSubmit);
 
 const yellowSprite = new Image();
     yellowSprite.src = 'assets/images/sprites/yellow_hero.png';
@@ -55,12 +63,14 @@ function gameWin() {
     bg_music.pause(); 
     player.gameStart = false;
     gameWon.className = "game_won";
+    highScoreInput.className = "";
 }
 
 function gameLose() {
     bg_music.pause(); 
     player.gameStart = false;
     gameOver.className = "game_over";
+    highScoreInput.className = "";
 }
 
 function restart() {
@@ -72,6 +82,7 @@ function restart() {
     time = 0;
     gameOver.className = "hidden";
     gameWon.className = "hidden";
+    highScoreInput.className = "hidden";
     player.gameStart = true;
     load();
 }
@@ -121,13 +132,14 @@ function render() {
     });
 
         checkInput();
-    if (player.gameStart) {
+        // player.gameStart = false;
+    // if (player.gameStart) {
         ticker();
         player.create(input.heroColor);
         player.move();
         player.checkBoundary();
         requestAnimationFrame(render);
-    }
+    // }
 };
 
 function dup(obj) {
@@ -135,10 +147,29 @@ function dup(obj) {
 }
 
 function ticker() {
-    tick++;
-    if (tick % 20 === 0) {
-        time++;
+    if (player.gameStart) {
+        tick++;
+        if (tick % 20 === 0) {
+            time++;
+        }
     }
 }
+function highScoreSubmit() {
+    let name = $("#inputname").val();
+
+    database.ref().push({
+    name: name,
+    score: score
+    })
+
+    $("#score-list").html(name)
+}
+
+const displayHighScores = (highScores) => {
+    const scoresTable = document.getElementById('scores-table');
+    debugger
+  };
+
+
 
 load();

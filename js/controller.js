@@ -28,7 +28,7 @@ document.addEventListener('keydown', e => {
       case 65: 
         input.left = true; 
         input.rightActive = false; 
-      break;  
+      break;   
       case 68: 
         input.right = true; 
         input.rightActive = true; 
@@ -67,6 +67,7 @@ document.addEventListener('keyup', e => {
 function checkInput() {
   if (input.music) {
     input.music = false;
+    player.gameStart = true
     music.paused ? music.play() : music.pause();
   }
 

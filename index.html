@@ -11,6 +11,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   </head>
   <body background="assets/images/bg_1.jpg">
@@ -23,7 +24,6 @@
           <div>WAD or Space to move</div><br/>
           <div>Enter to toggle color</div><br/>
           <div>M to mute music</div>
-
         </div>
 
         <canvas id="canvas" height="1000" width="1400"></canvas>
@@ -44,29 +44,64 @@
         </div>
       </div>
 
-    <div className="social_links">
-      <a href="https://github.com/davidyoon85"><i class="fab fa-lg fa-github-square"></i></a>
-      <a href="https://www.linkedin.com/in/davidyoon85"><i class="fab fa-lg fa5 fa-linkedin"></i></a>
+      <div className="social_links">
+        <a href="https://github.com/davidyoon85"><i class="fab fa-lg fa-github-square"></i></a>
+        <a href="https://www.linkedin.com/in/davidyoon85"><i class="fab fa-lg fa5 fa-linkedin"></i></a>
+      </div>
     </div>
 
-    </div>
-
-
+      <div id="high-scores-container">
+        <h1 id="high_score_title">High Scores</h1>
+        <ul id="scores-table"></ul>
+        
+        <form id="high-score-input" class="hidden">
+          <input id="inputname" type="text" placeholder="Enter your name">
+          <input type="submit" id="high-score-button" >
+        </form>
+      </div>
+   
     <audio id="bg_music" src="assets/audio/Insert-Quarter.mp3" loop></audio>
 
+    <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyB2_DmuLEymROncbY00wBQ8eWYhYliNgOc",
+          authDomain: "toggle-a5e42.firebaseapp.com",
+          databaseURL: "https://toggle-a5e42.firebaseio.com",
+          projectId: "toggle-a5e42",
+          storageBucket: "toggle-a5e42.appspot.com",
+          messagingSenderId: "1019667653781"
+        };
+        firebase.initializeApp(config);
+        const database = firebase.database();
+      </script>
 
     <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyAMJeBcjfy67HxU9yGqDCqbasylr8jKcBU",
-        authDomain: "toggle-6ae6f.firebaseapp.com",
-        databaseURL: "https://toggle-6ae6f.firebaseio.com",
-        projectId: "toggle-6ae6f",
-        storageBucket: "toggle-6ae6f.appspot.com",
-        messagingSenderId: "942632684793"
-      };
+      const scoresTable = document.getElementById('scores-table');
+      const scoreArray = [];
+      const list = document.querySelector('ul#scores-table')
 
-      firebase.initializeApp(config);
+      const sortByScore = (arr) => {
+        return arr.sort(function(a, b) {
+        })
+      }
+
+      database.ref().orderByChild("score").limitToLast(10).on("value", function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+      var childName = childSnapshot.val().name;
+      var childScore = childSnapshot.val().score;
+      scoreArray.push({childName, childScore});
+    });
+    sortByScore(scoreArray)
+    
+    for (let i = scoreArray.length-1; i >= 0; i--) {
+      var listItem = document.createElement("li");
+      listItem.innerHTML = scoreArray[i].childName + "<br/>" + scoreArray[i].childScore;
+      
+      list.appendChild(listItem)
+    }
+    })
+
     </script>
 
     <script type="text/javascript" src="js/levels.js"></script>

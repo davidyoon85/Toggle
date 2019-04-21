@@ -118,13 +118,13 @@ function render() {
     context.fillStyle = "yellow";
     context.fillText(`${score}`, 290, 70)
 
-    context.font = "18px 'Press Start 2P'";
-    context.fillStyle = "white";
-    context.fillText(`Time`, 380, 40)
+    // context.font = "18px 'Press Start 2P'";
+    // context.fillStyle = "white";
+    // context.fillText(`Time`, 380, 40)
 
-    context.font = "18px 'Press Start 2P'";
-    context.fillStyle = "yellow";
-    context.fillText(`${time}`, 410, 70)
+    // context.font = "18px 'Press Start 2P'";
+    // context.fillStyle = "yellow";
+    // context.fillText(`${time}`, 410, 70)
 
     platforms.forEach(platform => {
         player.collisionDetection(platform),
@@ -133,13 +133,13 @@ function render() {
 
         checkInput();
         // player.gameStart = false;
-    // if (player.gameStart) {
+    if (player.gameStart) {
         ticker();
         player.create(input.heroColor);
         player.move();
         player.checkBoundary();
         requestAnimationFrame(render);
-    // }
+    }
 };
 
 function dup(obj) {

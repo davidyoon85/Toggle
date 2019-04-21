@@ -110,10 +110,10 @@ body {
   }
 
 #high-scores-container {
+  height: 80%;
   position: absolute;
-  height: 59%;
-  top: 17.3%;
-  left: 2%;
+  top: 10%;
+  left: 8%;
   background-color: rgba(0,0,0,.5);
   width: 15%;
   font-size: 10px;
@@ -123,15 +123,20 @@ body {
 
 #high_score_title {
   color: #526eec;
-  padding: 10px;
+  padding: 25px 25px 15px 25px;
+  font-size: 15px;
 }
 
 li {
   list-style: none;
   margin: 0 auto;
-  padding: 10px;
+  padding: 12px;
   width: 90px;
   font-weight: 200;
+}
+
+li:last-child {
+  padding-bottom: 26px;
 }
 
 input:placeholder-shown {

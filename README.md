@@ -15,3 +15,9 @@ On the game won or game loss screen, click to restart game.
 Player must reach the power pellet in order to go on to the next level.
 Collecting pellets along the way will increase your score.
 Player can toggle their hero color, to choose from: yellow, red, pink or blue.
+
+## Future Plans
+I plan on implementing 3 new features to the game.
+First, I will create new levels.
+Second, players will need to collect all the pellets in order to get to the next level.
+Third, change score system to account for time instead of points.

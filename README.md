@@ -18,6 +18,6 @@ You can play Toggle [here](https://davidyoon85.github.io/Toggle)!
 
 ## Future Plans
 I plan on implementing 3 new features to the game.
-First, I will create new levels.
-Second, players will need to collect all the pellets in order to get to the next level.
-Third, change score system to account for time instead of points.
+* First, I will create new levels.
+* Second, players will need to collect all the pellets in order to get to the next level.
+* Third, change score system to account for time instead of points.

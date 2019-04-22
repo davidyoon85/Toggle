@@ -15,6 +15,15 @@ class Player {
         this.gameStart = false;
     };
 
+    resetPlayerMove() {
+        this.x_velocity = 0;
+        this.y_velocity = 0;
+        this.x_velocityMax = 10;
+        this.y_velocityMax = 18;
+        this.x_acceleration = 0.5;
+        this.y_acceleration = 0.5;
+    }
+
     create(heroColor) {
         let hero_color = heroColor % 4
         const scale = 3.5;

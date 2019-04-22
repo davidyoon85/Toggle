@@ -61,19 +61,26 @@ function reset() {
 
 function gameWin() {
     bg_music.pause(); 
+    player.resetPlayerMove();
+    resetInput();
     player.gameStart = false;
     gameWon.className = "game_won";
     highScoreInput.className = "";
+    clearListeners();
 }
 
 function gameLose() {
     bg_music.pause(); 
+    player.resetPlayerMove();
+    resetInput();
     player.gameStart = false;
     gameOver.className = "game_over";
     highScoreInput.className = "";
+    clearListeners();
 }
 
 function restart() {
+    player.gameStart = true;
     currentLevel = 0;
     numLives = 5;
     player.x_velocity = 0;
@@ -83,7 +90,8 @@ function restart() {
     gameOver.className = "hidden";
     gameWon.className = "hidden";
     highScoreInput.className = "hidden";
-    player.gameStart = true;
+    input.restart = false;
+    addListeners();
     load();
 }
 
@@ -132,7 +140,6 @@ function render() {
     });
 
         checkInput();
-        // player.gameStart = false;
     if (player.gameStart) {
         ticker();
         player.create(input.heroColor);
@@ -170,7 +177,5 @@ const displayHighScores = (highScores) => {
     const scoresTable = document.getElementById('scores-table');
     debugger
   };
-
-
 
 load();

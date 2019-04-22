@@ -7,7 +7,7 @@ const input = {
   heroColor: 0
 };
   
-document.addEventListener('keydown', e => {
+const keyDown = e => {
   e.preventDefault();
   if (!musicOn) {
     musicOn = true;
@@ -40,10 +40,11 @@ document.addEventListener('keydown', e => {
         input.restart = true; 
         checkInput();
       break;
+    }
   }
-});
+  document.addEventListener('keydown', keyDown);
 
-document.addEventListener('keyup', e => {
+const keyUp = e => {
   const key = e.keyCode;
     switch(key) {
       case 32: 
@@ -62,7 +63,9 @@ document.addEventListener('keyup', e => {
         input.music = false; 
       break; 
   }
-});
+}
+
+document.addEventListener('keyup', keyUp);
 
 function checkInput() {
   if (input.music) {
@@ -99,3 +102,21 @@ function checkInput() {
   }
 }
 
+function resetInput() {
+  input.up = false,
+  input.left = false,
+  input.right = false,
+  input.rightActive = true,
+  input.restart = false,
+  input.heroColor = 0
+}
+
+function clearListeners() {
+  document.removeEventListener("keyup", keyUp)
+  document.removeEventListener("keydown", keyDown)
+}
+
+function addListeners() {
+  document.addEventListener("keyup", keyUp)
+  document.addEventListener("keydown", keyDown)
+}

@@ -91,6 +91,7 @@ function restart() {
     gameWon.className = "hidden";
     highScoreInput.className = "hidden";
     input.restart = false;
+    bg_music.play(); 
     addListeners();
     load();
 }
@@ -164,7 +165,6 @@ function ticker() {
 function highScoreSubmit() {
     let name = $("#inputname").val();
 
-    debugger
     database.ref().push({
     name: name,
     score: score
@@ -175,7 +175,6 @@ function highScoreSubmit() {
 
 const displayHighScores = (highScores) => {
     const scoresTable = document.getElementById('scores-table');
-    debugger
   };
 
 load();

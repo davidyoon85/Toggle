@@ -92,6 +92,7 @@ function restart() {
     highScoreInput.className = "hidden";
     input.restart = false;
     bg_music.play(); 
+    player.collectedPellets = [];
     addListeners();
     load();
 }

@@ -36,10 +36,10 @@ const keyDown = e => {
       case 77: 
         input.music = true; 
       break;     
-      case 82: 
-        input.restart = true; 
-        checkInput();
-      break;
+      // case 82: 
+      //   input.restart = true; 
+      //   checkInput();
+      // break;
     }
   }
   document.addEventListener('keydown', keyDown);

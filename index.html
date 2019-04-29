@@ -18,7 +18,19 @@
   <body background="assets/images/bg_1.jpg">
 
     <div class="main">
-      <h1 className="toggleTitle">TOGGLE</h1></br>
+      <h1 class="toggleTitle">TOGGLE</h1></br>
+      <div class="main_content">
+
+      <div id="high-scores-container">
+        <h1 id="high_score_title">High Scores</h1>
+        <ul id="scores-table"></ul>
+        
+        <form id="high-score-input" class="hidden">
+          <input id="inputname" type="text" placeholder="Enter your name">
+          <br/>
+          <input type="submit" id="high-score-button" >
+        </form>
+      </div>
 
       <div class="canvas_container">
         <div id="start_menu">
@@ -44,6 +56,7 @@
           </div>
         </div>
       </div>
+      </div>
 
       <div className="social_links">
         <a href="https://github.com/davidyoon85"><i class="fab fa-lg fa-github-square"></i></a>
@@ -51,17 +64,6 @@
         <a href="https://angel.co/david-yoon-13"><i class="fab fa-angellist"></i></a>
       </div>
     </div>
-
-      <div id="high-scores-container">
-        <h1 id="high_score_title">High Scores</h1>
-        <ul id="scores-table"></ul>
-        
-        <form id="high-score-input" class="hidden">
-          <input id="inputname" type="text" placeholder="Enter your name">
-          <br/>
-          <input type="submit" id="high-score-button" >
-        </form>
-      </div>
    
     <audio id="bg_music" src="assets/audio/Insert-Quarter.mp3" loop></audio>
 

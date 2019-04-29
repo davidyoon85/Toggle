@@ -29,17 +29,14 @@ body {
   }
 
   .main {
-    height: 60%;
-    /* position: absolute;
-    top: 40%;
-    left: 55%; */
+    height: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* transform: translate(-50%, -50%); */
   }
 
   .canvas_container {
+    position: relative;
     border-radius: 10px;
     height: 100%;
     width: 100vh;
@@ -86,7 +83,7 @@ body {
 
   .game_over {
     position: absolute;
-    top: 21%;
+    bottom: 10%;
     left: 0;
     width: 100%;
     height: 90%;
@@ -174,5 +171,5 @@ input:placeholder-shown {
 .toggleTitle { 
   position: absolute;
   top: 10%;
-  font-size: 2em;
+  font-size: 1.3em;
 }

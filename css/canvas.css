@@ -54,7 +54,7 @@ body {
     top: 35%;
     width: 50%;
     height: 25%;
-    margin-left: 12%;
+    margin-left: 25%;
     text-align: center;
     background-color: transparent;
     color: white;
@@ -139,16 +139,18 @@ li:last-child {
 }
 
 #inputname {
+  font-family: 'Press Start 2P', cursive;
   width: 50%;
   height: 20%;
   text-align: center;
-  font-size: 14px;
+  font-size: 8px;
   font-weight: 400;
   color: black;
 }
 
 input:placeholder-shown {
   text-align: center;
+  font-family: 'Press Start 2P', cursive;
 }
 
 #scores-table {
@@ -171,13 +173,14 @@ input:placeholder-shown {
   position: relative;
   top: 10px;
   height: 20%;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 9px;
+  font-weight: 700;
   color: black;
 }
 
 #high-score-button:hover {
   color: #526eec;
+  cursor: pointer;
 }
 
 .main_content {

@@ -91,7 +91,7 @@
         })
       }
 
-      database.ref().orderByChild("score").limitToLast(10).on("value", function(snapshot) {
+      database.ref().orderByChild("score").limitToLast(5).on("value", function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
       var childName = childSnapshot.val().name;
       var childScore = childSnapshot.val().score;

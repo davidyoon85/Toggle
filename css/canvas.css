@@ -22,7 +22,7 @@ time, mark, audio, video, button {
 body {
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100%;
   font-family: 'Press Start 2P', cursive;
   color: white;
   font-size: 30px;
@@ -38,9 +38,9 @@ body {
   .canvas_container {
     position: relative;
     border-radius: 10px;
-    height: 100%;
     width: 100vh;
     margin: 0 auto;
+    height: 60vh;
     box-shadow: 0px 0px 10px 2px #526eec;
   }
   
@@ -106,7 +106,7 @@ body {
   }
 
 #high-scores-container {
-  height: 100%;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,6 +116,7 @@ body {
   font-size: 9px;
   font-weight: 200;
   text-align: center;
+  padding: 15px;
 }
 
 #high_score_title {
@@ -132,6 +133,7 @@ li {
   width: 100%;
   height: 15%;
   font-weight: 200;
+  padding: 10px 0px 10px 0px;
 }
 
 li:last-child {
@@ -143,14 +145,13 @@ li:last-child {
   width: 50%;
   height: 20%;
   text-align: center;
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 400;
   color: black;
 }
 
 input:placeholder-shown {
   text-align: center;
-  font-size: 8px;
   font-family: 'Press Start 2P', cursive;
 }
 

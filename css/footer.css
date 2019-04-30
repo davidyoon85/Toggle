@@ -10,5 +10,7 @@ i {
 
 .social_links {
     width: 15%;
+    top: 25%;
+    position: relative;
 }
 

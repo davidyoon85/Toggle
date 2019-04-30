@@ -120,7 +120,7 @@ body {
 
 #high_score_title {
   color: #526eec;
-  font-size: 20px;
+  font-size: 15px;
   height: 10%;
   display: flex;
   align-items: center;
@@ -150,6 +150,7 @@ li:last-child {
 
 input:placeholder-shown {
   text-align: center;
+  font-size: 8px;
   font-family: 'Press Start 2P', cursive;
 }
 

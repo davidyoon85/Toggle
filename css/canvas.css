@@ -148,7 +148,7 @@ li:last-child {
   width: 70%;
   height: 20%;
   text-align: center;
-  font-size: 8px;
+  font-size: .7px;
   font-weight: 400;
   color: black;
 }
@@ -156,13 +156,13 @@ li:last-child {
 #inputname:placeholder-shown {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
-  font-size: 7px;
+  font-size: .7em;
 }
 
 #inputnameinput::placeholder {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
-  font-size: 7px;
+  font-size: .7em;
 }
 
 #scores-table {

@@ -228,3 +228,7 @@ i:hover {
   justify-content: space-evenly;
   width: 18%;
 }
+
+.social_links > a {
+  width: 36.42px;
+}

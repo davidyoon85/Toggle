@@ -1,19 +1,2 @@
-i:hover {
-    color: #526eec;
-    transform: scale(1.1);
-  }
 
-i {
-    color: black;
-    margin: 50px;
-}
-
-.social_links {
-    top: 25%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 18%;
-    padding: 15px;
-}
 

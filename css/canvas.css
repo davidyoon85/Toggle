@@ -204,3 +204,23 @@ input::placeholder {
   margin-top: 5%;
   font-size: 1.1em;
 }
+
+i {
+  color: black;
+  font-size: 20px;
+}
+
+i:hover {
+  color: #526eec;
+  transform: scale(1.1);
+}
+
+.social_links {
+  top: 25%;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 18%;
+}

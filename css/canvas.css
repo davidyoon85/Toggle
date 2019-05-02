@@ -32,6 +32,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    top: 5%;
   }
 
   .canvas_container {
@@ -78,6 +80,7 @@ body {
   .game_won_body {
     top: 25%;
     left: 25;
+    font-size: 2em;
   }
 
   .game_over {
@@ -98,6 +101,7 @@ body {
   .game_over_body {
     top: 25%;
     left: 25;
+    font-size: 2em;
   }
 
   .hidden {
@@ -141,7 +145,7 @@ li:last-child {
 
 #inputname {
   font-family: 'Press Start 2P', cursive;
-  width: 50%;
+  width: 70%;
   height: 20%;
   text-align: center;
   font-size: 8px;
@@ -149,16 +153,16 @@ li:last-child {
   color: black;
 }
 
-input:placeholder-shown {
+#inputname:placeholder-shown {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
-  font-size: 8px;
+  font-size: 7px;
 }
 
-input::placeholder {
+#inputnameinput::placeholder {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
-  font-size: 8px;
+  font-size: 7px;
 }
 
 #scores-table {
@@ -177,7 +181,7 @@ input::placeholder {
 }
 
 #high-score-button {
-  width: 50%;
+  width: 70%;
   position: relative;
   top: 10px;
   height: 20%;
@@ -200,7 +204,7 @@ input::placeholder {
 }
 
 .toggleTitle { 
-  margin-top: 5%;
+  margin: 2%;
   font-size: 2em;
 }
 

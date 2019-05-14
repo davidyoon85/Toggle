@@ -1,5 +1,5 @@
 # Toggle
-Toggle is a JavaScript platformer inspired by Pacman and OnOff.
+Toggle is a JavaScript platformer inspired by Pacman and OnOff!
 
 You can play Toggle [here](https://davidyoon85.github.io/Toggle)!
 

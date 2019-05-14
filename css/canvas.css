@@ -59,7 +59,7 @@ body {
     text-align: center;
     background-color: transparent;
     color: white;
-    font-size: 13px;
+    font-size: .8em;
   }
 
   .game_won {
@@ -129,6 +129,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 }
 
 li {

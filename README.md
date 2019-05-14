@@ -1,11 +1,11 @@
 # Toggle
 Toggle is a JavaScript platformer inspired by Pacman and OnOff!
 
-You can play Toggle [here](https://davidyoon85.github.io/Toggle)!
-
 <p align="center">
 <img src="./assets/images/toggle_main.png" width="800" height="400" align="middle"/>
 </p>
+
+You can play Toggle [here](https://davidyoon85.github.io/Toggle)! Or visit my portfolio site [here](https://davidyoon85.github.io)!
 
 ## Controls
 * Press AWD or Spacebar to move.

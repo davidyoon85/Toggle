@@ -21,7 +21,7 @@ time, mark, audio, video, button {
 
 body {
   background-size: cover;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   height: 100vh;
   font-family: 'Press Start 2P', cursive;
   color: white;
@@ -42,6 +42,7 @@ body {
     width: 100vh;
     margin: 0 auto;
     height: 60vh;
+    min-height: 400px;
     box-shadow: 0px 0px 10px 2px #526eec;
   }
   
@@ -59,7 +60,7 @@ body {
     text-align: center;
     background-color: transparent;
     color: white;
-    font-size: .8em;
+    font-size: .7em;
   }
 
   .game_won {
@@ -74,7 +75,7 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: .5em;
+    font-size: .7em;
   }
 
   .game_won_body {
@@ -95,7 +96,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: .5em;
+    font-size: .7em;
   }
 
   .game_over_body {
@@ -110,6 +111,7 @@ body {
 
 #high-scores-container {
   height: 60vh;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -223,6 +225,7 @@ i:hover {
   top: 25%;
   left: 5%;
   height: 60vh;
+  min-height: 400px;
   position: relative;
   display: flex;
   flex-direction: column;

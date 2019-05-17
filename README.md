@@ -25,7 +25,7 @@ You can play Toggle [here](https://davidyoon85.github.io/Toggle)! Or visit my po
 * Player can toggle their hero color, to choose from: yellow, red, pink or blue.
 
 <p align="center">
-<img src="./assets/images/render_character.png" width="800" height="400" align="middle"/>
+<img src="./assets/images/render_character.png" width="500" height="300" align="middle"/>
 </p>
 
 * After game is won or lost, player can enter their name into the leaderboard.

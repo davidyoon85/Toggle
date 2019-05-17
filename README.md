@@ -14,9 +14,20 @@ You can play Toggle [here](https://davidyoon85.github.io/Toggle)! Or visit my po
 * On the game won or game loss screen, click on canvas to restart game.
 
 ## Features
+* Object collsion detection between player and objects.
+
+<p align="center">
+<img src="./assets/images/object_collison.png" width="800" height="400" align="middle"/>
+</p>
+
 * Player must reach the power pellet in order to go on to the next level.
 * Collecting pellets along the way will increase your score.
 * Player can toggle their hero color, to choose from: yellow, red, pink or blue.
+
+<p align="center">
+<img src="./assets/images/render_character.png" width="800" height="400" align="middle"/>
+</p>
+
 * After game is won or lost, player can enter their name into the leaderboard.
 * After name input, player name and score is sent to database, then leaderboard refreshes with current top 5 scores.
 

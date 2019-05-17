@@ -17,7 +17,7 @@ You can play Toggle [here](https://davidyoon85.github.io/Toggle)! Or visit my po
 * Object collsion detection between player and objects.
 
 <p align="center">
-<img src="./assets/images/object_collison.png" width="600" height="400" align="middle"/>
+<img src="./assets/images/object_collison.png" width="700" height="400" align="middle"/>
 </p>
 
 * Player must reach the power pellet in order to go on to the next level.

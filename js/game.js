@@ -17,8 +17,6 @@ let highScoreInput = document.getElementById('high-score-input');
 let nameScore = $('#name');
 let scoreList = $("#score-list")
 
-
-
 $("#high-score-input").submit(highScoreSubmit);
 
 const yellowSprite = new Image();
@@ -53,7 +51,6 @@ function reset() {
         context.fillStyle = "black";
         context.fillRect(0, 0, context.canvas.width, context.canvas.height);
         player.pos = dup(levels[currentLevel].startPos);
-
         platforms = levels[currentLevel].platforms.filter(platform => !player.collectedPellets.includes(platform.id))
         platforms = platforms.map((platform) => new Object(platform));
     }
@@ -87,10 +84,12 @@ function restart() {
     player.y_velocity = 0;
     score = 0;
     time = 0;
+
     gameOver.className = "hidden";
     gameWon.className = "hidden";
     highScoreInput.className = "hidden";
     input.restart = false;
+
     bg_music.play(); 
     player.collectedPellets = [];
     addListeners();
@@ -128,20 +127,13 @@ function render() {
     context.fillStyle = "yellow";
     context.fillText(`${score}`, 290, 70)
 
-    // context.font = "18px 'Press Start 2P'";
-    // context.fillStyle = "white";
-    // context.fillText(`Time`, 380, 40)
-
-    // context.font = "18px 'Press Start 2P'";
-    // context.fillStyle = "yellow";
-    // context.fillText(`${time}`, 410, 70)
-
     platforms.forEach(platform => {
         player.collisionDetection(platform),
         platform.create()
     });
 
-        checkInput();
+    checkInput();
+
     if (player.gameStart) {
         ticker();
         player.create(input.heroColor);
@@ -163,6 +155,7 @@ function ticker() {
         }
     }
 }
+
 function highScoreSubmit() {
     let name = $("#inputname").val();
 

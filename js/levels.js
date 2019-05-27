@@ -534,5 +534,5 @@ const levels = [
         type: 'goal'
       },
     ],
-  }
+  },
 ];

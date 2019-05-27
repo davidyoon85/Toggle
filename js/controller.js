@@ -36,34 +36,30 @@ const keyDown = e => {
       case 77: 
         input.music = true; 
       break;     
-      // case 82: 
-      //   input.restart = true; 
-      //   checkInput();
-      // break;
     }
   }
   document.addEventListener('keydown', keyDown);
 
-const keyUp = e => {
-  const key = e.keyCode;
-    switch(key) {
-      case 32: 
-        input.up = false;
-      break;  
-      case 87: 
-        input.up = false;
-      break;   
-      case 65: 
-        input.left = false; 
-      break;  
-      case 68: 
-        input.right = false;
-      break;   
-      case 77: 
-        input.music = false; 
-      break; 
+  const keyUp = e => {
+    const key = e.keyCode;
+      switch(key) {
+        case 32: 
+          input.up = false;
+        break;  
+        case 87: 
+          input.up = false;
+        break;   
+        case 65: 
+          input.left = false; 
+        break;  
+        case 68: 
+          input.right = false;
+        break;   
+        case 77: 
+          input.music = false; 
+        break; 
+    }
   }
-}
 
 document.addEventListener('keyup', keyUp);
 

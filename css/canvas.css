@@ -81,7 +81,7 @@ body {
   .game_won_body {
     top: 25%;
     left: 25;
-    font-size: 2em;
+    font-size: 1.6em;
   }
 
   .game_over {
@@ -102,7 +102,7 @@ body {
   .game_over_body {
     top: 25%;
     left: 25;
-    font-size: 2em;
+    font-size: 1.6em;
   }
 
   .hidden {
